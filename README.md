@@ -1,6 +1,4 @@
-# SpringBootAssignment1
-
-# Spring Boot Hotel Management App
+# SpringBootAssignment1 - Hotel Management App
 
 Welcome to the Spring Boot Hotel Management App! This application allows you to manage information about hotels, including their names, locations, stars, and total rooms. Follow the instructions below to set up the database and run the application.
 
