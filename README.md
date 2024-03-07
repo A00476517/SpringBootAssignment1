@@ -20,18 +20,24 @@ CREATE TABLE hotel (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-**Running the Application**
+## Running the Application
 
-Clone this repository to your local machine.
+1. **Clone this repository to your local machine:**
+    ```bash
+    git clone https://github.com/your-username/your-repository.git
+    ```
 
-Navigate to the project directory.
+2. **Navigate to the project directory:**
+    ```bash
+    cd your-repository
+    ```
 
-Run the application using the following command:
+3. **Run the application using the following command:**
+    ```bash
+    ./mvnw spring-boot:run
+    ```
 
-bash
-Copy code
-./mvnw spring-boot:run
-The application will run on http://localhost:8080.
+    The application will run on [http://localhost:8080](http://localhost:8080).
 
 API Endpoints
 Get Hotels:
