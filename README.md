@@ -19,7 +19,7 @@ CREATE TABLE hotel (
     total_rooms INT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
+```
 ## Running the Application
 
 1. **Clone this repository to your local machine:**
