@@ -24,12 +24,12 @@ CREATE TABLE hotel (
 
 1. **Clone this repository to your local machine:**
     ```bash
-    git clone https://github.com/your-username/your-repository.git
+    git clone https://github.com/A00476517/SpringBootAssignment1.git
     ```
 
 2. **Navigate to the project directory:**
     ```bash
-    cd your-repository
+    cd SpringBootAssignment1
     ```
 
 3. **Run the application using the following command:**
