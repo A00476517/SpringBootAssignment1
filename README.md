@@ -39,15 +39,16 @@ CREATE TABLE hotel (
 
     The application will run on [http://localhost:8080](http://localhost:8080).
 
-API Endpoints
-Get Hotels:
+## API Endpoints
 
-Method: GET
-Endpoint: http://localhost:8080/api/hotels
-Add Hotel:
+- **Get Hotels:**
+  - **Method:** GET
+  - **Endpoint:** [http://localhost:8080/api/hotels](http://localhost:8080/api/hotels)
 
-Method: POST
-Endpoint: http://localhost:8080/api/addHotels
+- **Add Hotel:**
+  - **Method:** POST
+  - **Endpoint:** [http://localhost:8080/api/addHotels](http://localhost:8080/api/addHotels)
+
 
 
 Run application which will run on http://localhost:8080
