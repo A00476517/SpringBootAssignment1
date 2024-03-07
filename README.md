@@ -1,5 +1,51 @@
 # SpringBootAssignment1
 
+# Spring Boot Hotel Management App
+
+Welcome to the Spring Boot Hotel Management App! This application allows you to manage information about hotels, including their names, locations, stars, and total rooms. Follow the instructions below to set up the database and run the application.
+
+## Database Configuration
+
+- **Database Name:** Your preferred database name (not specified in the provided information).
+- **Table Name:** hotel
+
+**Query to Create Table:**
+```sql
+CREATE TABLE hotel (
+    hotel_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    stars INT,
+    total_rooms INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+**Running the Application**
+
+Clone this repository to your local machine.
+
+Navigate to the project directory.
+
+Run the application using the following command:
+
+bash
+Copy code
+./mvnw spring-boot:run
+The application will run on http://localhost:8080.
+
+API Endpoints
+Get Hotels:
+
+Method: GET
+Endpoint: http://localhost:8080/api/hotels
+Add Hotel:
+
+Method: POST
+Endpoint: http://localhost:8080/api/addHotels
+
+
+Run application which will run on http://localhost:8080
+
 End Points:
 Get Hotels: GET http://localhost:8080/api/hotels
 Add Hotel: POST http://localhost:8080/api/addHotels
