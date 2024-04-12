@@ -16,7 +16,7 @@ import java.util.Date;
 public class Hotel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long hotelId;
+    private Integer hotelId;
 
     @NotBlank
     private String name;
@@ -33,11 +33,11 @@ public class Hotel {
     @CreatedDate
     private Date createdAt;
 
-    public Long getHotelId() {
+    public Integer getHotelId() {
         return hotelId;
     }
 
-    public void setHotelId(Long hotelId) {
+    public void setHotelId(Integer hotelId) {
         this.hotelId = hotelId;
     }
 
