@@ -17,7 +17,8 @@ import java.util.List;
 import org.springframework.http.ResponseEntity;
 import com.example.hotelapp.DTO.ReservationRequest;
 import com.example.hotelapp.DTO.GuestDetailsRequest;
-
+import java.util.HashMap;
+import java.util.Map;
 
 
 @RestController
@@ -61,24 +62,31 @@ public class HotelController {
         return hotelRepository.save(hotel);
     }
 
-    @PostMapping("/createReservations")
+     @PostMapping("/createReservations")
     public ResponseEntity<?> createReservationWithGuests(@Valid @RequestBody ReservationRequest reservationRequest) {
         try {
-            // Assuming the Reservation entity uses Integer for IDs
             Reservation reservation = new Reservation();
             reservation.setHotel(hotelRepository.findById(reservationRequest.getHotelId()).orElseThrow(() -> new RuntimeException("Hotel not found")));
             reservation.setUser(userRepository.findById(reservationRequest.getUserId()).orElseThrow(() -> new RuntimeException("User not found")));
             reservation.setCheck_in_date(reservationRequest.getCheckInDate());
             reservation.setCheck_out_date(reservationRequest.getCheckOutDate());
+            
+            // Save the reservation to the database
             Reservation savedReservation = reservationRepository.save(reservation);
+            
+            // Process guest details and associate with the reservation
             reservationRequest.getGuests().forEach(guestDto -> {
                 GuestDetails guest = new GuestDetails();
                 guest.setName(guestDto.getName());
-                guest.setGender(guestDto.getGender().toUpperCase());
+                guest.setGender(guestDto.getGender());
                 guest.setReservation(savedReservation);
                 guestDetailsRepository.save(guest);
             });
-            return ResponseEntity.ok("Reservation and guest details saved successfully.");
+
+            Map<String, Object> response = new HashMap<>();
+            response.put("message", "Reservation created successfully");
+            response.put("reservationId", savedReservation.getId());
+            return ResponseEntity.ok(response);
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Error creating reservation: " + e.getMessage());
         }

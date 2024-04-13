@@ -33,6 +33,9 @@ public class Hotel {
     @CreatedDate
     private Date createdAt;
 
+    @Column(nullable = false)
+    private boolean isAvailable; 
+
     public Integer getHotelId() {
         return hotelId;
     }
@@ -79,6 +82,14 @@ public class Hotel {
 
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
+    }
+
+     public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
     }
 
 }
